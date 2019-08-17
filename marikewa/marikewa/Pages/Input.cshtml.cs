@@ -7,10 +7,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace marikewa.Pages
 {
-	public class PrivacyModel : PageModel
+	public class InputModel : PageModel
 	{
 		public void OnGet()
 		{
 		}
+
+		public string Voornaam { get; set; }
+		public string Achternaam { get; set; }
+		public string Advies { get; set; }
 	}
 }

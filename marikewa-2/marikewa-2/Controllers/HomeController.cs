@@ -25,7 +25,7 @@ namespace marikewa_2.Controllers
 			int nrOfFiles = dir.GetFiles().Count();
 			if(nrOfFiles == 0) { return "Ga zo door"; }
 			Random rnd = new System.Random();
-			int rand = rnd.Next(1, nrOfFiles);
+			int rand = rnd.Next(0, nrOfFiles);
 			var files = dir.GetFiles();
 			var file = files[rand];
 			FormData outcome = new FormData();

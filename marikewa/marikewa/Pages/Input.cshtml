@@ -1,8 +1,18 @@
 ﻿@page
 @model PrivacyModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Input";
 }
-<h1>@ViewData["Title"]</h1>
+<h1>Wat zou ze moeten doen?</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>Vul dit formulier in, en geef je advies</p>
+<div formulier>
+    <form id="form" action="">
+        Voornaam: <br>
+        <input name="voornaam" type="text" value="voornaam"/><br>
+        Achternaam: <br />
+        <input name="achternaam" type="text" value="achternaam"/><br>
+        Advies <br>
+        <input name="advies" type="text" value="advies"/>
+    </form>
+</div>

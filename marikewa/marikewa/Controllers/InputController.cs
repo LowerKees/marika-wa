@@ -16,7 +16,8 @@ namespace marikewa.Controllers
 			return View();
 		}
 
-		public ActionResult Edit(FormCollection values)
+		[HttpPost]
+		public ActionResult Post(FormCollection values)
 		{
 			var voornaam = values["Voornaam"];
 			var achternaam = values["Achternaam"];

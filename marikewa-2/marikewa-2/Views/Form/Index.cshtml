@@ -1,0 +1,30 @@
+﻿@model marikewa_2.Models.FormData
+
+@{
+    ViewData["Title"] = "Input";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Input</h1>
+
+@using (Html.BeginForm("FormOne", "Form", FormMethod.Post))
+{
+<p>Voornaam:</p>
+@Html.TextBoxFor(model => model.Voornaam)
+<p>Achternaam:</p>
+@Html.TextBoxFor(model => model.Achternaam)
+<p>Advies:</p>
+@Html.TextBoxFor(model => model.Advies)
+<br>
+<br>
+<input type="submit" value="Geef Advies" />
+}
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

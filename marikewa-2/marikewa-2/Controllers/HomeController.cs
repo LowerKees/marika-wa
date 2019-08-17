@@ -23,6 +23,7 @@ namespace marikewa_2.Controllers
 		{
 			DirectoryInfo dir = new DirectoryInfo("wwwroot/sav");
 			int nrOfFiles = dir.GetFiles().Count();
+			if(nrOfFiles == 0) { return "Ga zo door"; }
 			Random rnd = new System.Random();
 			int rand = rnd.Next(1, nrOfFiles);
 			var files = dir.GetFiles();

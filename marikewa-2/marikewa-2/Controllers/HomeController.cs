@@ -14,14 +14,21 @@ namespace marikewa_2.Controllers
 	{
 		public IActionResult Index()
 		{
-			string advies = GetRandomAdvies();
+			string path = "wwwroot/sav";
+			CreateDirectory(path);
+			string advies = GetRandomAdvies(path);
 			ViewData["Advies"] = advies;
 			return View();
 		}
 
-		private string GetRandomAdvies()
+		private void CreateDirectory(string path)
 		{
-			DirectoryInfo dir = new DirectoryInfo("wwwroot/sav");
+			Directory.CreateDirectory(path);
+		}
+
+		private string GetRandomAdvies(string path)
+		{
+			DirectoryInfo dir = new DirectoryInfo(path);
 			int nrOfFiles = dir.GetFiles().Count();
 			if(nrOfFiles == 0) { return "Ga zo door"; }
 			Random rnd = new System.Random();
